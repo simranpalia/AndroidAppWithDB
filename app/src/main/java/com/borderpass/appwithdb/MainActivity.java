@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     public void startGetData(View view) {
         Intent intent=new Intent(this,GetData.class);
         startActivity(intent);
+    }
 
+    public void startAddDataActivity(View view) {
+        startActivity(new Intent(this,AddData.class));
     }
 }
