@@ -17,4 +17,8 @@ public class AddData extends AppCompatActivity {
         Intent intent=new Intent(this,MainActivity.class);
         startActivity(intent);
     }
+
+    public void saveData(View view) {
+
+    }
 }
