@@ -28,7 +28,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_TABLE = "CREATE TABLE" + TABLE_NAME + "(" + COLUMN_ID +
+        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_ID +
                 "INTEGER PRIMARYKEY," + COLUMN_NAME + "TEXT )";
         db.execSQL(CREATE_TABLE);
     }
@@ -37,7 +37,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {    }
     public String loadHandler() {
         String result = "";
-        String query = "Select*FROM" + TABLE_NAME;
+        String query = "Select * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         while (cursor.moveToNext()) {
@@ -76,7 +76,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
     }
     public boolean deleteHandler(int ID) {
         boolean result = false;
-        String query = "Select*FROM" + TABLE_NAME + "WHERE" + COLUMN_ID + "= '" + String.valueOf(ID) + "'";
+        String query = "Select * FROM " + TABLE_NAME + "WHERE" + COLUMN_ID + "= '" + String.valueOf(ID) + "'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         Product dbProduct = new Product();
