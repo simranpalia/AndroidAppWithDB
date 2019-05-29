@@ -1,3 +1,5 @@
+package com.borderpass.appwithdb;
+
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,8 +22,8 @@ public class MyDBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "ProductID";
     public static final String COLUMN_NAME = "ProductName";
 
-    public MyDBHandler(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version, @Nullable DatabaseErrorHandler errorHandler) {
-        super(context, name, factory, version, errorHandler);
+    public MyDBHandler(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
     @Override
