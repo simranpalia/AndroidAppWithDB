@@ -17,7 +17,7 @@ public class GetData extends AppCompatActivity {
 
         productsData=findViewById(R.id.editText3);
 
-        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        MyDBHandler dbHandler = new MyDBHandler(GetData.this);
         productsData.setText(dbHandler.loadHandler());
 
     }

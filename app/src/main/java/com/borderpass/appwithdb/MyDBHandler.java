@@ -17,19 +17,20 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "ProductsDB.db";
+    private static final String DATABASE_NAME = "ProductsDB";
     public static final String TABLE_NAME = "MasterProduct";
     public static final String COLUMN_ID = "ProductID";
     public static final String COLUMN_NAME = "ProductName";
 
-    public MyDBHandler(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public MyDBHandler(Context context) {
+        super(context, DATABASE_NAME, null,DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_ID +" "+"INTEGER PRIMARY KEY AUTOINCREMENT ," + COLUMN_NAME + " "+"TEXT )";
         db.execSQL(CREATE_TABLE);
+
     }
 
     @Override

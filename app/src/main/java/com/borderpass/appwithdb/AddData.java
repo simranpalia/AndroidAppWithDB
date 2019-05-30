@@ -25,7 +25,7 @@ public class AddData extends AppCompatActivity {
 
     public void saveData(View view) {
 
-        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        MyDBHandler dbHandler = new MyDBHandler(AddData.this);
         Product product = new Product(0, editText.getText().toString());
         dbHandler.addHandler(product);
     }
