@@ -15,7 +15,6 @@ import com.borderpass.appwithdb.Product;
 
 public class MyDBHandler extends SQLiteOpenHelper {
 
-
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "ProductsDB";
     public static final String TABLE_NAME = "MasterProduct";
@@ -50,14 +49,15 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
+
     public void addHandler(Product product) {
         ContentValues values = new ContentValues();
-        //values.put(COLUMN_ID, product.getID());
         values.put(COLUMN_NAME, product.getProductName());
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
+
     public Product findHandler(String productname) {
         String query = "Select * FROM " + TABLE_NAME + "WHERE" + COLUMN_NAME + " = " + "'" + productname + "'";
         SQLiteDatabase db = this.getWritableDatabase();
@@ -74,6 +74,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.close();
         return dbProduct;
     }
+
     public boolean deleteHandler(int ID) {
         boolean result = false;
         String query = "Select * FROM " + TABLE_NAME + "WHERE" + COLUMN_ID + "= '" + String.valueOf(ID) + "'";
@@ -92,6 +93,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
+
     public boolean updateHandler(int ID, String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues args = new ContentValues();

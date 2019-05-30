@@ -59,14 +59,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-                <EditText
-                    android:id="@+id/editText3"
+                <ListView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="List of data goes here..."
-                    android:onClick="startMainActivity"
-                    android:ems="10"
-                    android:inputType="textMultiLine" />
+                    android:id="@+id/dataList"
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
         </android.support.constraint.ConstraintLayout>
