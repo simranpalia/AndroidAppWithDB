@@ -28,7 +28,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_ID +" "+"INTEGER PRIMARY KEY AUTOINCREMENT ," + COLUMN_NAME + " "+"TEXT )";
+        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_ID +" "+"INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME + " "+"TEXT )";
         db.execSQL(CREATE_TABLE);
 
     }
@@ -52,7 +52,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
     }
     public void addHandler(Product product) {
         ContentValues values = new ContentValues();
-        values.put(COLUMN_ID, product.getID());
+        //values.put(COLUMN_ID, product.getID());
         values.put(COLUMN_NAME, product.getProductName());
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_NAME, null, values);
